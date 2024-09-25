@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<center>
+	<table border="2">
+		<tr>
+			<th>Name</th>
+			<th>Venue</th>
+			<th>delete</th>
+		</tr>
+
+		{% for d in disp %}
+		<td>
+			<th>{{d.name}}</th>
+			<th>{{d.venue}}</th>
+			<th><a href ="{% url 'delete?id={{d.id}}' %}">delete</a></th>
+		</td>
+		{% endfor %}
+	</table>
+	<a href="{% url 'add' %}">Add a task</a>
+</center>
+</body>
+</html>
